@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = 'github.com/Marwane97/grpc-tutorial/basic/protofile';
+
+message MyRequest {
+  int32 numberA = 1;
+  int32 numberB = 2;
+}
+
+message MyResponse {
+  int32 total = 1;
+}
+
+service CalculatorService {
+  rpc Calculate (MyRequest) returns (MyResponse);
+}
